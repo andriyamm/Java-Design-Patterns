@@ -1,5 +1,9 @@
 package org.amm.dp.budai.creational.singleton;
 
+/**
+ * Singleton lazy init
+ *
+ */
 public class LoggerSingleton {
 	
 	private int _logCount = 0;

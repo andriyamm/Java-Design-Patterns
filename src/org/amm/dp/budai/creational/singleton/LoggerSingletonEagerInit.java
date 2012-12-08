@@ -1,6 +1,11 @@
 package org.amm.dp.budai.creational.singleton;
 
+/**
+ * Singleton Eager init
+ *
+ */
 public class LoggerSingletonEagerInit {
+	
 	private int _logCount = 0;
 	private static final LoggerSingletonEagerInit instance = new LoggerSingletonEagerInit();
 
