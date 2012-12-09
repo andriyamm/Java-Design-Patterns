@@ -5,7 +5,7 @@ public class BuilderDemo {
 	public static void Run() {
 		
 		// Your system could have bulk of builders
-		LaptopBuilder tripBuilder = new TripLaptopBuilder();
+		//LaptopBuilder tripBuilder = new TripLaptopBuilder();
 		LaptopBuilder gamingBuilder = new GamingLaptopBuilder();
 		BuyLaptop shopForYou = new BuyLaptop();// director
 
