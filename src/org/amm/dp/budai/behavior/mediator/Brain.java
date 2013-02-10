@@ -24,7 +24,7 @@ public class Brain {
 
 	public void SomethingHappenedToBodyPart(BodyPart bodyPart)
     {
-        if (bodyPart is Ear)
+        if (bodyPart instanceof Ear)
         {
             String heardSounds = ((Ear)bodyPart).GetSounds();
 
@@ -40,12 +40,12 @@ public class Brain {
                 Face.Smile();
             }
         }
-        else if (bodyPart is Eye)
+        else if (bodyPart instanceof Eye)
         {
             // brain can analyze what you see and
             // can react appropriately using different body parts
         }
-        else if (bodyPart is Hand)
+        else if (bodyPart instanceof Hand)
         {
             var hand = (Hand)bodyPart;
 
@@ -62,7 +62,7 @@ public class Brain {
                 Hand.Embrace();
             }
         }
-        else if (bodyPart is Leg)
+        else if (bodyPart instanceof Leg)
         {
             // leg can also feel something if you would like it to
         }
