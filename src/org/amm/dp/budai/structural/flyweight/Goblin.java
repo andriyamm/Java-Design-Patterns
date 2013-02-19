@@ -1,15 +1,13 @@
 package org.amm.dp.budai.structural.flyweight;
 
-public class Goblin extends Unit
-{
-    public Goblin()
-    {
-        Name = "Goblin";
-        Health = 8;
-        //old
-        Picture = Image.Load("Goblin.jpg");
-        //new
-        Picture = UnitImagesFactory.CreateGoblinImage();
-    }
+public class Goblin extends Unit {
+	
+	public Goblin() {
+		name = "Goblin";
+		health = 8;
+		// old
+		picture = Image.Load("Goblin.jpg");
+		// new
+		picture = UnitImagesFactory.CreateGoblinImage();
+	}
 }
-

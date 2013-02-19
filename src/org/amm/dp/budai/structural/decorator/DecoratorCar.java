@@ -2,23 +2,23 @@ package org.amm.dp.budai.structural.decorator;
 
 public class DecoratorCar extends Car {
 	
-	protected Car DecoratedCar;
+	protected Car decoratedCar;
 
 	public DecoratorCar(Car decoratedCar) {
-		DecoratedCar = decoratedCar;
+		this.decoratedCar = decoratedCar;
 	}
 
 	@Override
 	public void Go() {
-		DecoratedCar.Go();
+		decoratedCar.Go();
 	}
 
 	public Car getDecoratedCar() {
-		return DecoratedCar;
+		return decoratedCar;
 	}
 
 	public void setDecoratedCar(Car decoratedCar) {
-		DecoratedCar = decoratedCar;
+		this.decoratedCar = decoratedCar;
 	}
 
 }

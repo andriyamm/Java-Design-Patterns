@@ -1,32 +1,32 @@
 package org.amm.dp.budai.structural.flyweight;
 
 public abstract class Unit {
-	public String Name;
-	public int Health;
-	public Image Picture;
+	
+	public String name;
+	public int health;
+	public Image picture;
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	protected void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public int getHealth() {
-		return Health;
+		return health;
 	}
 
 	protected void setHealth(int health) {
-		Health = health;
+		this.health = health;
 	}
 
 	public Image getPicture() {
-		return Picture;
+		return picture;
 	}
 
 	protected void setPicture(Image picture) {
-		Picture = picture;
+		this.picture = picture;
 	}
-
 }

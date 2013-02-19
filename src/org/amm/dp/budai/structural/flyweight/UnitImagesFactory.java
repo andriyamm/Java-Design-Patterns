@@ -5,19 +5,19 @@ import java.util.Map;
 
 public class UnitImagesFactory {
 	
-	public static Map<String, Image> Images = new HashMap<String, Image>();
+	public static Map<Class<?>, Image> Images = new HashMap<Class<?>, Image>();
 
 	public static Image CreateDragonImage() {
-		if (!Images.containsKey("Dragon")) {
-			Images.put("Dragon", Image.Load("Dragon.jpg"));
+		if (!Images.containsKey(Dragon.class)) {
+			Images.put(Dragon.class, Image.Load("Dragon.jpg"));
 		}
-		return Images[typeof(Dragon)];
+		return Images.get(Dragon.class);
 	}
 
 	public static Image CreateGoblinImage() {
 		if (!Images.containsKey("Goblin")) {
-			Images.put("Goblin", Image.Load("Goblin.jpg"));
+			Images.put(Goblin.class, Image.Load("Goblin.jpg"));
 		}
-		return Images[typeof(Goblin)];
+		return Images.get(Goblin.class);
 	}
 }

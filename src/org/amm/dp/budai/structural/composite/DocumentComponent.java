@@ -5,46 +5,46 @@ import java.util.List;
 
 public class DocumentComponent implements IDocumentComponent {
 	
-	public String Name;
-	public List<IDocumentComponent> DocumentComponents;
+	public String name;
+	public List<IDocumentComponent> documentComponents;
 
 	public DocumentComponent(String name) {
-		Name = name;
-		DocumentComponents = new ArrayList<IDocumentComponent>();
+		this.name = name;
+		documentComponents = new ArrayList<IDocumentComponent>();
 	}
 
 	public String GatherData() {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append(String.format("<{0}>", Name));
+		stringBuilder.append(String.format("<%s>", name));
 
-		for (IDocumentComponent documentComponent : DocumentComponents) {
+		for (IDocumentComponent documentComponent : documentComponents) {
 			documentComponent.GatherData();
 			stringBuilder.append(documentComponent.GatherData());
 		}
-		stringBuilder.append(String.format("</{0}>", Name));
+		stringBuilder.append(String.format("</%s>", name));
 		return stringBuilder.toString();
 	}
 
 	public void AddComponent(IDocumentComponent documentComponent) {
-		DocumentComponents.add(documentComponent);
+		documentComponents.add(documentComponent);
 	}
 
 	// getters and setters
 	
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public List<IDocumentComponent> getDocumentComponents() {
-		return DocumentComponents;
+		return documentComponents;
 	}
 
 	public void setDocumentComponents(
 			List<IDocumentComponent> documentComponents) {
-		DocumentComponents = documentComponents;
+		this.documentComponents = documentComponents;
 	}
 }

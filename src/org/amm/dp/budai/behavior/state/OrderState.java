@@ -35,6 +35,6 @@ public class OrderState {
 	private void OperationIsNotAllowed(String operationName) {
 		System.out.println(
 				"Operation {0} is not allowed for Order's state {1}",
-				operationName, this.GetType().Name);
+				operationName, this.GetType().name);
 	}
 }

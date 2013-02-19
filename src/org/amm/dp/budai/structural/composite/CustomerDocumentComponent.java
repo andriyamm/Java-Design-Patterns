@@ -1,15 +1,16 @@
 package org.amm.dp.budai.structural.composite;
 
 public class CustomerDocumentComponent implements IDocumentComponent {
-	private int CustomerIdToGatherData;
+	
+	private int customerIdToGatherData;
 
 	public CustomerDocumentComponent(int customerIdToGatherData) {
-		CustomerIdToGatherData = customerIdToGatherData;
+		this.customerIdToGatherData = customerIdToGatherData;
 	}
 
 	public String GatherData() {
 		String customerData;
-		switch (CustomerIdToGatherData) {
+		switch (customerIdToGatherData) {
 		case 41:
 			customerData = "Andriy Buday";
 			break;
@@ -17,7 +18,7 @@ public class CustomerDocumentComponent implements IDocumentComponent {
 			customerData = "Someone else";
 			break;
 		}
-		return String.format("<Customer>{0}</Customer>", customerData);
+		return String.format("<Customer>%s</Customer>", customerData);
 	}
 
 	public void AddComponent(IDocumentComponent documentComponent) {
@@ -25,11 +26,11 @@ public class CustomerDocumentComponent implements IDocumentComponent {
 	}
 
 	public int getCustomerIdToGatherData() {
-		return CustomerIdToGatherData;
+		return customerIdToGatherData;
 	}
 
 	public void setCustomerIdToGatherData(int customerIdToGatherData) {
-		CustomerIdToGatherData = customerIdToGatherData;
+		this.customerIdToGatherData = customerIdToGatherData;
 	}
 
 }
