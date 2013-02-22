@@ -22,7 +22,7 @@ public class InterpreterDemo
 
     private CurrentPricesContext GetRecentPricesContext()
     {
-        var pricesContext = new CurrentPricesContext();
+    	CurrentPricesContext pricesContext = new CurrentPricesContext();
         pricesContext.SetPrice("Bed", 400);
         pricesContext.SetPrice("TV", 100);
         pricesContext.SetPrice("Laptop", 500);

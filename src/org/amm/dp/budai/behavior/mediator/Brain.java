@@ -28,14 +28,14 @@ public class Brain {
         {
             String heardSounds = ((Ear)bodyPart).GetSounds();
 
-            if (heardSounds.Contains("stupid"))
+            if (heardSounds.contains("stupid"))
             {
                 // attacking offender
                 Leg.StepForward();
                 Hand.HitPersonNearYou();
                 Leg.Kick();
             }
-            else if (heardSounds.Contains("cool"))
+            else if (heardSounds.contains("cool"))
             {
                 Face.Smile();
             }
@@ -47,15 +47,15 @@ public class Brain {
         }
         else if (bodyPart instanceof Hand)
         {
-            var hand = (Hand)bodyPart;
+        	Hand hand = (Hand)bodyPart;
 
-            bool hurtingFeeling = hand.DoesItHurt();
+            boolean hurtingFeeling = hand.DoesItHurt();
             if (hurtingFeeling)
             {
                 Leg.StepBack();
             }
 
-            bool itIsNice = hand.IsItNice();
+            boolean itIsNice = hand.IsItNice();
             if (itIsNice)
             {
                 Leg.StepForward();

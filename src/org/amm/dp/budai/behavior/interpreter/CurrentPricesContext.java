@@ -1,40 +1,33 @@
 package org.amm.dp.budai.behavior.interpreter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 //Context
-public class CurrentPricesContext
-{
-Map<String, int> _prices = new HashMap<String, int>();
+public class CurrentPricesContext {
+	
+	Map<String, Integer> prices = new HashMap<String, Integer>();
 
-public CurrentPricesContext()
-{
-   _prices.Add("Bed", 3000);
-   _prices.Add("TV", 400);
-   _prices.Add("Laptop", 1500);
+	public CurrentPricesContext() {
+		prices.put("Bed", 3000);
+		prices.put("TV", 400);
+		prices.put("Laptop", 1500);
+	}
+
+	public int GetPrice(String goodName) {
+		if (prices.containsKey(goodName)) {
+			return prices.get(goodName);
+		} else {
+			throw new IllegalArgumentException(
+					"Could not get price for the good that is not registered.");
+		}
+	}
+
+	public void SetPrice(String goodName, int cost) {
+		if (prices.containsKey(goodName)) {
+			prices.put(goodName, cost);
+		} else {
+			prices.put(goodName, cost);
+		}
+	}
 }
-
-public int GetPrice(String goodName)
-{
-   if (_prices.ContainsKey(goodName))
-   {
-       return _prices[goodName];
-   }
-   else
-   {
-       throw new ArgumentException("Could not get price for the good that is not registered.");
-   }
-}
-
-public void SetPrice(String goodName, int cost)
-{
-   if (_prices.ContainsKey(goodName))
-   {
-       _prices[goodName] = cost;
-   }
-   else
-   {
-       _prices.Add(goodName, cost);
-   }
-}
-}
-
-

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 public class Team {
+	
 	public String Name;
 
 	public Team(String name) {
@@ -26,7 +27,7 @@ public class Team {
 	private void AnalyzeRequirements(List<Requirement> requirements) {
 		for (Requirement requirement : requirements) {
 			if (StringUtils.isEmpty(requirement.UserStory)) {
-				throw new ArgumentException(
+				throw new IllegalArgumentException(
 						"not enought information on some of the requirements...");
 			}
 		}
