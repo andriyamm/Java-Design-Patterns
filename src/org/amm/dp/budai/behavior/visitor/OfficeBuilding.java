@@ -1,32 +1,64 @@
 package org.amm.dp.budai.behavior.visitor;
 
+import java.util.ArrayList;
+import java.util.List;
 
+public class OfficeBuilding implements IElement {
+	
+	private final List<Floor> _floors = new ArrayList<Floor>();
+	public String BuildingName;
+	public int Age;
+	public int ElectricitySystemId;
 
-public class OfficeBuilding implements IElement
-{
-    private readonly IList<Floor> _floors = new List<Floor>();
-    public string BuildingName { get; private set; }
-    public int Age { get; set; }
-    public int ElectricitySystemId { get; set; }
+	public Iterable<Floor> Floors;
 
-    public IEnumerable<Floor> Floors { get { return _floors; } }
+	public OfficeBuilding(String buildingName, int age, int electricitySystemId) {
+		BuildingName = buildingName;
+		Age = age;
+		ElectricitySystemId = electricitySystemId;
+	}
 
-    public OfficeBuilding(string buildingName, int age, int electricitySystemId)
-    {
-        BuildingName = buildingName;
-        Age = age;
-        ElectricitySystemId = electricitySystemId;
-    }
-    public void AddFloor(Floor floor)
-    {
-        _floors.Add(floor);
-    }
-    public void Accept(IVisitor visitor)
-    {
-        visitor.Visit(this);
-        foreach (var floor in Floors)
-        {
-            floor.Accept(visitor);
-        }
-    }
+	public void AddFloor(Floor floor) {
+		_floors.add(floor);
+	}
+
+	public void Accept(IVisitor visitor) {
+		visitor.Visit(this);
+		for (Floor floor : Floors) {
+			floor.Accept(visitor);
+		}
+	}
+
+	public String getBuildingName() {
+		return BuildingName;
+	}
+
+	public void setBuildingName(String buildingName) {
+		BuildingName = buildingName;
+	}
+
+	public int getAge() {
+		return Age;
+	}
+
+	public void setAge(int age) {
+		Age = age;
+	}
+
+	public int getElectricitySystemId() {
+		return ElectricitySystemId;
+	}
+
+	public void setElectricitySystemId(int electricitySystemId) {
+		ElectricitySystemId = electricitySystemId;
+	}
+
+	public Iterable<Floor> getFloors() {
+		return Floors;
+	}
+
+	public void setFloors(Iterable<Floor> floors) {
+		Floors = floors;
+	}
+
 }

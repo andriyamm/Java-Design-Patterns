@@ -1,8 +1,10 @@
 package org.amm.dp.budai.behavior.mediator;
 
+import java.util.Scanner;
+
 public class Ear extends BodyPart {
 	
-	private String _sounds;
+	private String sounds;
 
 	public Ear(Brain brain) {
 		super(brain);
@@ -10,12 +12,12 @@ public class Ear extends BodyPart {
 
 	public void HearSomething() {
 		System.out.println("Enter what you hear:");
-		_sounds = System.console().readLine();
+		sounds = new Scanner(System.in).next();
 
 		Changed();
 	}
 
 	public String GetSounds() {
-		return _sounds;
+		return sounds;
 	}
 }

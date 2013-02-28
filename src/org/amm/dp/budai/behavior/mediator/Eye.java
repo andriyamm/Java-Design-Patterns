@@ -1,8 +1,10 @@
 package org.amm.dp.budai.behavior.mediator;
 
+import java.util.Scanner;
+
 public class Eye extends BodyPart {
 	
-	private String _thingsAround;
+	private String thingsAround;
 
 	public Eye(Brain brain) {
 		super(brain);
@@ -10,16 +12,16 @@ public class Eye extends BodyPart {
 
 	public void SeeSomething() {
 		System.out.println("Enter what you see:");
-		this.set_thingsAround(System.console().readLine());
+		thingsAround = new Scanner(System.in).next();
 
 		Changed();
 	}
 
 	public String get_thingsAround() {
-		return _thingsAround;
+		return thingsAround;
 	}
 
 	public void set_thingsAround(String _thingsAround) {
-		this._thingsAround = _thingsAround;
+		this.thingsAround = _thingsAround;
 	}
 }

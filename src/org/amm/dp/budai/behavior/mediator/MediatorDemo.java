@@ -1,37 +1,30 @@
 package org.amm.dp.budai.behavior.mediator;
 
-import org.apache.commons.lang3.StringUtils;
+import java.util.Scanner;
 
-public class MediatorDemo
-{
-    public static void Run()
-    {
-    	Brain human = new Brain();
+public class MediatorDemo {
 
-        String line;
-        AskForInput();
-        while (!StringUtils.isEmpty(line = System.console().readLine()))
-        {
-            switch (line)
-            {
-                case "Ear":
-                    human.Ear.HearSomething();
-                    break;
-                case "Eye":
-                    human.Eye.SeeSomething();
-                    break;
-                case "Hand":
-                    human.Hand.FeelSomething();
-                    break;
-            }
-            AskForInput();
-        }
-    }
+	public static void main(String[] args) {
+		Brain human = new Brain();
 
-    private static void AskForInput()
-    {
-        Console.ForegroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine("Enter body part ('Ear','Eye','Hand' or empty to exit):");
-        Console.ForegroundColor = ConsoleColor.Green;
-    }
+		String line = new String();
+		AskForInput();
+		Scanner scanIn = new Scanner(System.in);
+		while (scanIn.hasNext()) {
+			line = scanIn.next();
+			if (line.equals("Ear")) {
+				human.getEar().HearSomething();
+			} else if (line.equals("Eye")) {
+				human.getEye().SeeSomething();
+			} else {
+				human.getHand().FeelSomething();
+			}
+			AskForInput();
+		}
+	}
+
+	private static void AskForInput() {
+		System.out
+				.println("Enter body part ('Ear','Eye','Hand' or empty to exit):");
+	}
 }

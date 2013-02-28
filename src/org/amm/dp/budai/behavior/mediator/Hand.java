@@ -1,5 +1,7 @@
 package org.amm.dp.budai.behavior.mediator;
 
+import java.util.Scanner;
+
 public class Hand extends BodyPart {
 	
 	private boolean _isSoft;
@@ -11,12 +13,12 @@ public class Hand extends BodyPart {
 
 	public void FeelSomething() {
 		System.out.println("What you feel is soft? (Yes/No)");
-		String answer = System.console().readLine();
+		String answer = new Scanner(System.in).next();
 		if (answer != null && answer.charAt(0) == 'Y') {
 			_isSoft = true;
 		}
 		System.out.println("What you feel is hurting? (Yes/No)");
-		answer = System.console().readLine();
+		answer = new Scanner(System.in).next();
 		if (answer != null && answer.charAt(0) == 'Y') {
 			_isHurting = true;
 		}

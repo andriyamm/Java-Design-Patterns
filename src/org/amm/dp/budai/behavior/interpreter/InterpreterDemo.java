@@ -9,6 +9,7 @@ public class InterpreterDemo {
 	}
 
 	public void RunInterpreterDemo() {
+		
 		// create syntax tree that represents sentence
 		GoodsPackage truckWithGoods = PrepareTruckWithGoods();
 		// get latest context

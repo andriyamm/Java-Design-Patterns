@@ -1,18 +1,23 @@
 package org.amm.dp.budai.behavior.visitor;
 
-public class ElectricitySystemValidator implements IVisitor
-{
-    public void Visit(OfficeBuilding building)
-    {
-        var electricityState = (building.ElectricitySystemId > 1000) ? "Good" : "Bad";
-        Console.WriteLine(string.Format("Main electric shield in building {0} is in {1} state.", building.BuildingName, electricityState));
-    }
-    public void Visit(Floor floor)
-    {
-        Console.WriteLine(string.Format("Diagnosting electricity on floor {0}.", floor.FloorNumber));
-    }
-    public void Visit(Room room)
-    {
-        Console.WriteLine(string.Format("Diagnosting electricity in room {0}.", room.RoomNumber));
-    }
+public class ElectricitySystemValidator implements IVisitor {
+	
+	public void Visit(OfficeBuilding building) {
+		String electricityState = (building.ElectricitySystemId > 1000) ? "Good"
+				: "Bad";
+		System.out.println(String.format(
+				"Main electric shield in building %s is in %s state.",
+				building.BuildingName, electricityState));
+	}
+
+	public void Visit(Floor floor) {
+		System.out
+				.println(String.format("Diagnosting electricity on floor %d.",
+						floor.getFloorNumber()));
+	}
+
+	public void Visit(Room room) {
+		System.out.println(String.format("Diagnosting electricity in room %d.",
+				room.roomNumber));
+	}
 }

@@ -1,17 +1,23 @@
 package org.amm.dp.budai.behavior.visitor;
 
+public class Room implements IElement {
+	
+	public int roomNumber;
 
+	public Room(int roomNumber) {
+		this.roomNumber = roomNumber;
+	}
 
-public class Room implements IElement
-{
-    public int RoomNumber { get; private set; }
+	public void Accept(IVisitor visitor) {
+		visitor.Visit(this);
+	}
 
-    public Room(int roomNumber)
-    {
-        RoomNumber = roomNumber;
-    }
-    public void Accept(IVisitor visitor)
-    {
-        visitor.Visit(this);
-    }
+	public int getRoomNumber() {
+		return roomNumber;
+	}
+
+	public void setRoomNumber(int roomNumber) {
+		this.roomNumber = roomNumber;
+	}
+
 }
