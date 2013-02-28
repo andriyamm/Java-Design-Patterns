@@ -17,7 +17,7 @@ public class InterpreterDemo {
 		// invoke Interpret
 		int totalPriceForGoods = truckWithGoods.Interpret(pricesContext);
 
-		System.out.printf("Total: {0}", totalPriceForGoods);
+		System.out.printf("Total: %d", totalPriceForGoods);
 	}
 
 	private CurrentPricesContext GetRecentPricesContext() {
@@ -32,14 +32,14 @@ public class InterpreterDemo {
 		GoodsPackage truck = new GoodsPackage();
 
 		Bed bed = new Bed();
-		GoodsPackage doubleTriplePackedBed = new GoodsPackage(
-				Arrays.asList(new Goods(new GoodsPackage(Arrays.asList(bed)))));
+		GoodsPackage packedBed = new GoodsPackage(
+				Arrays.asList((Goods)bed));
 
-		truck.GoodsInside.add(doubleTriplePackedBed);
+		truck.GoodsInside.add(packedBed);
 		truck.GoodsInside.add(new TV());
 		truck.GoodsInside.add(new TV());
 
-		truck.GoodsInside.add(new GoodsPackage(Arrays.asList(new Laptop(),
+		truck.GoodsInside.add(new GoodsPackage(Arrays.asList((Goods)new Laptop(),
 				new Laptop(), new Laptop())));
 
 		return truck;

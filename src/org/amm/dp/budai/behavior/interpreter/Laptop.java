@@ -6,7 +6,7 @@ public class Laptop extends Goods {
 	@Override
 	public int Interpret(CurrentPricesContext context) {
 		int price = context.GetPrice("Laptop");
-		System.out.printf("Laptop: {0}", price);
+		System.out.printf("Laptop: %d", price);
 		return price;
 	}
 }
