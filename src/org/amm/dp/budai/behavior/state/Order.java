@@ -3,8 +3,6 @@ package org.amm.dp.budai.behavior.state;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.amm.dp.budai.behavior.state.Order.Invoiced;
-
 public class Order {
 	
 	private OrderState _state;
@@ -19,7 +17,7 @@ public class Order {
 	}
 
 	public void WriteCurrentStateName() {
-		System.out.println("Current Order's state: {0}", _state.GetType().name);
+		System.out.printf("Current Order's state: %s", _state.getClass().toString());
 	}
 
 	//

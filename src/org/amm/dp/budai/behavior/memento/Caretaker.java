@@ -1,25 +1,21 @@
 package org.amm.dp.budai.behavior.memento;
 
-public class Caretaker
-{
-    private readonly GameOriginator _game = new GameOriginator();
-    private readonly Stack<GameMemento> _quickSaves = new Stack<GameMemento>();
+import java.util.Stack;
 
-    public void ShootThatDumbAss()
-    {
-        _game.Play();
-    }
+public class Caretaker {
+	
+	private final GameOriginator game = new GameOriginator();
+	private final Stack<GameMemento> quickSaves = new Stack<GameMemento>();
 
-    public void F5()
-    {
-        _quickSaves.Push(_game.GameSave());
-    }
+	public void ShootThatDumbAss() {
+		game.Play();
+	}
 
-    public void F9()
-    {
-        _game.LoadGame(_quickSaves.Peek());
-        _quickSaves.Peek().GetState().Health = 8;
-    }
+	public void F5() {
+		quickSaves.push(game.GameSave());
+	}
+
+	public void F9() {
+		game.LoadGame(quickSaves.peek());
+	}
 }
-
-

@@ -1,20 +1,20 @@
 package org.amm.dp.budai.behavior.observer;
 
 //
-public class ConservativePlayer implements IObserver
-{
-    public String BoxerToPutMoneyOn;
+public class ConservativePlayer implements IObserver {
+	
+	public String BoxerToPutMoneyOn;
 
-    public void Update(ISubject subject)
-    {
-    	ISubject boxFight = (BoxFight)subject;
+	public void Update(ISubject subject) {
+		ISubject boxFight = (BoxFight) subject;
 
-        if (boxFight.BoxerAScore < boxFight.BoxerBScore)
-            BoxerToPutMoneyOn = "I put on boxer B, better be safe!";
-        else BoxerToPutMoneyOn = "I put on boxer A, better be safe!";
+		if (boxFight.getBoxerAScore() < boxFight.getBoxerBScore())
+			BoxerToPutMoneyOn = "I put on boxer B, better be safe!";
+		else
+			BoxerToPutMoneyOn = "I put on boxer A, better be safe!";
 
-        System.out.println("CONSERVATIVEPLAYER:{0}", BoxerToPutMoneyOn);
-    }
+		System.out.printf("CONSERVATIVEPLAYER:%s", BoxerToPutMoneyOn);
+	}
 
 	public String getBoxerToPutMoneyOn() {
 		return BoxerToPutMoneyOn;
@@ -23,6 +23,5 @@ public class ConservativePlayer implements IObserver
 	public void setBoxerToPutMoneyOn(String boxerToPutMoneyOn) {
 		BoxerToPutMoneyOn = boxerToPutMoneyOn;
 	}
-    
-    
+
 }

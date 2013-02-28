@@ -5,24 +5,24 @@ import java.util.List;
 
 public class Army {
 	
-	public Hero ArmyHero;
-	public List<Group> ArmyGroups;
+	public Hero armyHero;
+	public List<Group> armyGroups;
 
 	public Army(Hero armyHero) {
-		ArmyHero = armyHero;
-		ArmyGroups = new ArrayList<Group>();
+		this.armyHero = armyHero;
+		armyGroups = new ArrayList<Group>();
 	}
 
 	public void AddArmyGroup(Group group) {
-		ArmyGroups.add(group);
+		armyGroups.add(group);
 	}
 
 	public List<Group> getArmyGroups() {
-		return ArmyGroups;
+		return armyGroups;
 	}
 
 	public void setArmyGroups(List<Group> armyGroups) {
-		ArmyGroups = armyGroups;
+		this.armyGroups = armyGroups;
 	}
 
 }

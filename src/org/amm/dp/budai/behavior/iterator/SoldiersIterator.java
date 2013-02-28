@@ -1,59 +1,57 @@
 package org.amm.dp.budai.behavior.iterator;
 
-import org.amm.dp.budai.behavior.iterator.Hero.Army;
-
 
 
 
 public class SoldiersIterator
 {
-    private readonly Army _army;
-    private bool _heroIsIterated;
-    private int _currentGroup;
-    private int _currentGroupSoldier;
+    private final Army army;
+    private boolean heroIsIterated;
+    private int currentGroup;
+    private int currentGroupSoldier;
 
     public SoldiersIterator(Army army)
     {
-        _army = army;
-        _heroIsIterated = false;
-        _currentGroup = 0;
-        _currentGroupSoldier = 0;
+        this.army = army;
+        heroIsIterated = false;
+        currentGroup = 0;
+        currentGroupSoldier = 0;
     }
 
-    public bool HasNext()
+    public boolean hasNext()
     {
-        if (!_heroIsIterated) return true;
-        if (_currentGroup < _army.ArmyGroups.Count) return true;
-        if (_currentGroup == _army.ArmyGroups.Count - 1)
-            if (_currentGroupSoldier < _army.ArmyGroups[_currentGroup].Soldiers.Count) return true;
+        if (!heroIsIterated) return true;
+        if (currentGroup < army.armyGroups.size()) return true;
+        if (currentGroup == army.armyGroups.size() - 1)
+            if (currentGroupSoldier < army.armyGroups.get(currentGroup).soldiers.size()) return true;
 
         return false;
     }
 
-    public Soldier Next()
+    public Soldier Next() throws Exception
     {
         Soldier nextSoldier;
         // we still not iterated all soldiers in current group
-        if (_currentGroup < _army.ArmyGroups.Count)
+        if (currentGroup < army.armyGroups.size())
         {
-            if (_currentGroupSoldier < _army.ArmyGroups[_currentGroup].Soldiers.Count)
+            if (currentGroupSoldier < army.armyGroups.get(currentGroup).soldiers.size())
             {
-                nextSoldier = _army.ArmyGroups[_currentGroup].Soldiers[_currentGroupSoldier];
-                _currentGroupSoldier++;
+                nextSoldier = army.armyGroups.get(currentGroup).soldiers.get(currentGroupSoldier);
+                currentGroupSoldier++;
             }
             // moving to next group
             else
             {
-                _currentGroup++;
-                _currentGroupSoldier = 0;
+                currentGroup++;
+                currentGroupSoldier = 0;
                 return Next();
             }
         }
         // hero is the last who left the battlefield
-        else if (!_heroIsIterated)
+        else if (!heroIsIterated)
         {
-            _heroIsIterated = true;
-            return _army.ArmyHero;
+            heroIsIterated = true;
+            return army.armyHero;
         }
         else
         {

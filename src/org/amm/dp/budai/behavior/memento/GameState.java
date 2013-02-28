@@ -1,39 +1,37 @@
 package org.amm.dp.budai.behavior.memento;
 
+public class GameState {
+
+	public double health;
+	public int killedMonsters;
+	
+	public GameState(double health, int killedMonsters) {
+		this.health = health;
+		this.killedMonsters = killedMonsters;
+	}
 
 
-public class GameState
-{
-    public GameState(double health, int killedMonsters)
-    {
-        Health = health;
-        KilledMonsters = killedMonsters;
-    }
-
-    public double Health;
-    public int KilledMonsters;
-
-    @Override
-    public String ToString()
-    {
-        return string.Format("Health: {0}{1}Killed Monsters: {2}", Health, Environment.NewLine, KilledMonsters);
-    }
+	@Override
+	public String toString() {
+		return String.format(
+				"Health: %f" + System.getProperty("line.separator")
+						+ "Killed Monsters: %d", health, killedMonsters);
+	}
 
 	public double getHealth() {
-		return Health;
+		return health;
 	}
 
 	public void setHealth(double health) {
-		Health = health;
+		this.health = health;
 	}
 
 	public int getKilledMonsters() {
-		return KilledMonsters;
+		return killedMonsters;
 	}
 
 	public void setKilledMonsters(int killedMonsters) {
-		KilledMonsters = killedMonsters;
+		this.killedMonsters = killedMonsters;
 	}
-    
-    
+
 }

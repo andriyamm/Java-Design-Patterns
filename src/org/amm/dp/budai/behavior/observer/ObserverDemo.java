@@ -5,8 +5,8 @@ public class ObserverDemo {
 	public static void main(String[] args) {
 		ISubject boxFight = new BoxFight();
 
-		ISubject riskyPlayer = new RiskyPlayer();
-		ISubject conservativePlayer = new ConservativePlayer();
+		IObserver riskyPlayer = new RiskyPlayer();
+		IObserver conservativePlayer = new ConservativePlayer();
 
 		boxFight.AttachObserver(riskyPlayer);
 		boxFight.AttachObserver(conservativePlayer);
